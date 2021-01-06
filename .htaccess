@@ -1,0 +1,86 @@
+#
+# Apaxy by @adamwhitcroft
+#
+# For a full breakdown of the mod_autoindex module:
+# http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
+
+    	# META VIEWPORT
+    	IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+
+	# HIDE /theme DIRECTORY
+	IndexIgnore .htaccess /_apaxy
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+	AddIcon /_apaxy/icons/blank.png ^^BLANKICON^^
+	AddIcon /_apaxy/icons/folder.png ^^DIRECTORY^^
+	AddIcon /_apaxy/icons/folder-home.png ..
+	
+	AddIconByType (TXT,/_apaxy/icons/text.png) text/*
+	AddIconByType (IMG,/_apaxy/icons/image.png) image/*
+	AddIconByType (SND,/_apaxy/icons/audio.png) audio/*
+	AddIconByType (VID,/_apaxy/icons/video.png) video/*
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+
+	AddIcon /_apaxy/icons/archive.png .7z .bz2 .cab .gz .tar
+	AddIcon /_apaxy/icons/audio.png .aac .aif .aifc .aiff .ape .au .flac .iff .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg .xm .it .s3m .mod
+	AddIcon /_apaxy/icons/bin.png .bin .hex
+	AddIcon /_apaxy/icons/bmp.png .bmp
+	AddIcon /_apaxy/icons/c.png .c
+	AddIcon /_apaxy/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /_apaxy/icons/cd.png .iso
+	AddIcon /_apaxy/icons/cpp.png .cpp
+	AddIcon /_apaxy/icons/css.png .css .sass .scss
+	AddIcon /_apaxy/icons/deb.png .deb
+	AddIcon /_apaxy/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddIcon /_apaxy/icons/draw.png .svg .svgz
+	AddIcon /_apaxy/icons/eps.png .ai .eps
+	AddIcon /_apaxy/icons/exe.png .exe
+	AddIcon /_apaxy/icons/gif.png .gif
+	AddIcon /_apaxy/icons/h.png .h
+	AddIcon /_apaxy/icons/html.png .html .xhtml .shtml .htm .URL .url
+	AddIcon /_apaxy/icons/ico.png .ico
+	AddIcon /_apaxy/icons/java.png .jar
+	AddIcon /_apaxy/icons/jpg.png .jpg .jpeg .jpe
+	AddIcon /_apaxy/icons/js.png .js .json
+	AddIcon /_apaxy/icons/markdown.png .md
+	AddIcon /_apaxy/icons/package.png .pkg .dmg
+	AddIcon /_apaxy/icons/pdf.png .pdf
+	AddIcon /_apaxy/icons/php.png .php .phtml
+	AddIcon /_apaxy/icons/playlist.png .m3u .m3u8 .pls .pls8
+	AddIcon /_apaxy/icons/png.png .png
+	AddIcon /_apaxy/icons/ps.png .ps
+	AddIcon /_apaxy/icons/psd.png .psd
+	AddIcon /_apaxy/icons/py.png .py
+	AddIcon /_apaxy/icons/rar.png .rar
+	AddIcon /_apaxy/icons/rb.png .rb
+	AddIcon /_apaxy/icons/rpm.png .rpm
+	AddIcon /_apaxy/icons/rss.png .rss
+	AddIcon /_apaxy/icons/script.png .bat .cmd .sh
+	AddIcon /_apaxy/icons/sql.png .sql
+	AddIcon /_apaxy/icons/tiff.png .tiff .tif
+	AddIcon /_apaxy/icons/text.png .txt .nfo
+	AddIcon /_apaxy/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
+	AddIcon /_apaxy/icons/xml.png .xml
+	AddIcon /_apaxy/icons/zip.png .zip
+	DefaultIcon /_apaxy/icons/default.png
+
+#
+# THEME FILES
+#
+
+	HeaderName /_apaxy/header.html
+	ReadmeName /_apaxy/footer.html
+	IndexStyleSheet /_apaxy/style.css
